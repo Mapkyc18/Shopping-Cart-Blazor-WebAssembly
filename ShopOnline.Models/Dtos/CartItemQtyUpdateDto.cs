@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopOnline.Models.Dtos
 {
-    internal class CartItemQtyUpdateDto
+    public class CartItemQtyUpdateDto
     {
+        public int CartItemId { get; set; }
+        public int Qty { get; set; }
     }
 }

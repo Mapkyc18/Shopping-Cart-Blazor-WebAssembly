@@ -1,4 +1,7 @@
 using ShopOnline.Web.Components;
+using ShopOnline.Web;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7263/") });
+
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
@@ -25,3 +30,5 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
+
