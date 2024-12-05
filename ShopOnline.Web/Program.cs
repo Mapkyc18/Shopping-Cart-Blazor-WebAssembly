@@ -1,5 +1,6 @@
 using ShopOnline.Web.Components;
-using ShopOnline.Web;
+using ShopOnline.Web.Services.Contracts;
+using ShopOnline.Web.Services;
 
 
 
@@ -20,6 +21,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7263/") });
+builder.Services.AddScoped<IProductService, ProductService>();
 
 app.UseHttpsRedirection();
 

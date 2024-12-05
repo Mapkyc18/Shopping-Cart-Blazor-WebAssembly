@@ -17,7 +17,7 @@ namespace ShopOnline.Web.Services
             try
             {
                 var response = await httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
-                return default(ProductDto);
+                return products;
 
             }
             catch (Exception ex)
