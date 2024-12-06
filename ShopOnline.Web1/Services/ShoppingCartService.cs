@@ -69,5 +69,26 @@ namespace ShopOnline.Web1.Services
                 throw;
             }
         }
+
+        public async Task<CartItemDto> IShoppingCartService.DeleteItem(int id)
+        {
+            try
+            {
+                var response = await httpClient.DeleteAsync($"api/ShoppingCart/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                return default(CartItemDto);
+            }
+            catch (Exception)
+            {
+                //Log exception
+                throw;
+            }
+        }
+
+        
     }
 }
