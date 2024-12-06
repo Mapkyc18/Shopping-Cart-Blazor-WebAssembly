@@ -41,6 +41,7 @@ namespace ShopOnline.Web1.Services
                 //Log exception
                 throw;
             }
+        }
 
         public async Task<IEnumerable<ProductDto>> GetItems()
         {

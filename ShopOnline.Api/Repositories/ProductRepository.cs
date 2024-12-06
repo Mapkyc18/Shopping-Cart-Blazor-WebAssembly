@@ -29,7 +29,7 @@ namespace ShopOnline.Api.Repositories
 
         public async Task<Product> GetItem(int id)
         {
-            var product = await shopOnlineDbContext.Products.FindAsync();
+            var product = await shopOnlineDbContext.Products.FindAsync(id);
 
             return product;
         }
