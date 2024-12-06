@@ -1,10 +1,10 @@
-﻿using ShopOnline.Web.Services.Contracts;
+﻿using ShopOnline.Models.Dtos;
+using ShopOnline.Web1.Services.Contracts;
 using System.Net.Http.Json;
 using ShopOnline.Models.Dtos;
-using ShopOnline.Web.Components.Pages;
+using ShopOnline.Web1.Components.Pages;
 
-
-namespace ShopOnline.Web.Services
+namespace ShopOnline.Web1.Services
 {
     public class ProductService : IProductService
     {
@@ -15,7 +15,7 @@ namespace ShopOnline.Web.Services
             this.httpClient = httpClient;
         }
         public async Task<IEnumerable<ProductDto>> GetItems()
-        {   
+        {
             try
             {
                 var products = await httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
