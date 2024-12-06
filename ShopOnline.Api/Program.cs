@@ -16,6 +16,7 @@ builder.Services.AddDbContextPool<ShopOnlineDbContext>(options =>
 
 // Add repositories.
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
 
 
